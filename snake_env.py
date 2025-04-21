@@ -7,10 +7,10 @@ class SnakeEnv():
     def __init__(self, grid_size = 10, cell_size=20, render_mode=False):
         self.grid_size = grid_size
         self.dir_order = ['UP', 'RIGHT', 'DOWN', 'LEFT']
-        self.rewards = {'wall_colission': -5,
-                        'self_collision': -5,
+        self.rewards = {'wall_colission': -10,
+                        'self_collision': -10,
                         'food': 100,
-                        'no_collision': -1}
+                        'no_collision': 0}
         
         self.auxiliary = AuxiliaryEnv(self.dir_order, self.grid_size)
         self.reset()

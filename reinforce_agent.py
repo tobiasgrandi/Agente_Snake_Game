@@ -45,3 +45,17 @@ class REINFORCEAgent:
         # Reiniciar
         self.log_probs = []
         self.rewards = []
+
+    def save(self, path='agent.pth'):
+        torch.save({
+        'model_state_dict': self.policy.state_dict(),
+        'optimizer_state_dict': self.optimizer.state_dict(),
+        'gamma': self.gamma
+        }, path)
+
+    def load(self, path='agent.pth'):
+        loader = torch.load(path)
+        self.policy.load_state_dict(loader['model_state_dict'])
+        self.optimizer.load_state_dict(loader['optimizer_state_dict'])
+        self.gamma = loader['gamma']
+        self.policy.eval()

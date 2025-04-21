@@ -65,7 +65,7 @@ class AuxiliaryEnv():
         delta_distance = old_distance - new_distance
 
         # Normalizar la recompensa
-        normalized_reward = delta_distance / max_distance
+        normalized_reward = 2*delta_distance / max_distance
 
         return normalized_reward
     
