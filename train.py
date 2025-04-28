@@ -36,7 +36,7 @@ def train(agent, env, num_episodes=1000):
     return scores
 
 
-def plot_scores_with_moving_average(scores, window=50):
+def plot_scores_with_moving_average(scores, window=100):
     scores = np.array(scores)
     moving_avg = np.convolve(scores, np.ones(window)/window, mode='valid')
 
