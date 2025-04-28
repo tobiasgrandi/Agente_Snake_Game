@@ -51,6 +51,8 @@ Se observa que a medida que el entrenamiento avanza:
 
 > El comportamiento final depende fuertemente de los hiperparámetros como la tasa de aprendizaje, `gamma` (factor de descuento), y la estructura de recompensas.
 
+![Gráfica de recompensas](plot.png)
+
 ## Instalación y Uso
 
 Clona el repositorio:
